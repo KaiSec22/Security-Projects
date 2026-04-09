@@ -125,7 +125,7 @@ DeviceFileEvents
 | order by Timestamp desc
 ```
 
-![alt text](<Screenshot 2026-04-08 223446.png>)
+<img width="1153" height="692" alt="Screenshot 2026-04-08 223446" src="https://github.com/user-attachments/assets/71d032eb-1de0-4f22-a6d9-4d7b164b5223" />
 
 ---
 
