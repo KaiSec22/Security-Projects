@@ -1253,13 +1253,14 @@ The attacker used a built-in Windows utility to clear event logs on the DC. What
 EmberForgeX_CL
 | where EventCode_s == "1"
 | where Computer == "EC2AMAZ-EEU3IA2.emberforge.local"
-| where CommandLine_s has "wevtutil"
+| where CommandLine_s has_any ("cl", "clear-log", "clear-eventlog")
 | project UtcTime_s, Computer, Image_s, CommandLine_s
 | sort by todatetime(UtcTime_s) asc
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2367" height="725" alt="Screenshot 2026-04-06 224444" src="https://github.com/user-attachments/assets/e4ab98c6-c77d-4c12-98b4-cc55bf9213a9" />
+
 
 **Answer:** `wevtutil`
 
