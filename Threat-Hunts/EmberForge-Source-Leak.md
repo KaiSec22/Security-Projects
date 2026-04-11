@@ -3,6 +3,7 @@
 ![artifact here]
 
 **Participant:** Kai Gallette 
+
 **Date:** 4-6-26
 ## Platforms and Languages Leveraged
 
