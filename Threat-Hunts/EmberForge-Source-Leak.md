@@ -1285,13 +1285,14 @@ CISO: "So we have evidence gaps on the DC where Security and System logs were wi
 EmberForgeX_CL
 | where EventCode_s == "1"
 | where Computer == "EC2AMAZ-EEU3IA2.emberforge.local"
-| where CommandLine_s has "wevtutil cl"
-| project UtcTime_s, CommandLine_s
+| where CommandLine_s has_any ("cl", "clear-log", "clear-eventlog")
+| project UtcTime_s, Computer, Image_s, CommandLine_s
 | sort by todatetime(UtcTime_s) asc
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2367" height="725" alt="image" src="https://github.com/user-attachments/assets/ad32c90f-5d52-4509-b758-0693c6eb608a" />
+
 
 **Answer:** `Security, System`
 
