@@ -1005,7 +1005,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="717" height="444" alt="image" src="https://github.com/user-attachments/assets/18f84ee4-3272-4dba-bfbc-2b560d7c45db" />
+
 
 **Answer:** `whoami`
 
@@ -1033,7 +1034,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1548" height="246" alt="image" src="https://github.com/user-attachments/assets/629a1235-7916-4067-b727-5613e8c48124" />
+
 
 **Answer:** `NTLM`
 
@@ -1066,7 +1068,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="771" height="627" alt="image" src="https://github.com/user-attachments/assets/15a490ba-573a-4383-86b3-a615263ef13c" />
+
 
 **Answer:** `whoami > vssadmin.exe`
 
