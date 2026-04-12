@@ -1096,7 +1096,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1201" height="443" alt="image" src="https://github.com/user-attachments/assets/cb2d59c9-142b-453a-9486-24458f1a75b0" />
+
 
 **Answer:** `svc_backup`
 
@@ -1124,7 +1125,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1201" height="443" alt="image" src="https://github.com/user-attachments/assets/b692793d-eace-47ab-a3c9-78d6d51706fb" />
+
 
 **Answer:** `P@ssw0rd123!`
 
@@ -1151,7 +1153,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1201" height="445" alt="image" src="https://github.com/user-attachments/assets/e8bab946-41b4-4959-9de0-2477225f5775" />
+
 
 **Answer:** `Domain Admins`
 
@@ -1179,7 +1182,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1316" height="391" alt="image" src="https://github.com/user-attachments/assets/265ae92d-ed54-410f-bdfe-e5b7e51a2239" />
+
 
 **Answer:** `EmberForge2024!`
 
@@ -1209,7 +1213,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1285" height="361" alt="image" src="https://github.com/user-attachments/assets/e6c7bcd2-47ba-4229-aa4d-6ded1b8af055" />
+
 
 **Answer:** `WindowsUpdate`
 
@@ -1230,14 +1235,16 @@ A legitimate remote management application was silently installed for unattended
 
 ```kql
 EmberForgeX_CL
-| where EventCode_s == "1" or EventCode_s == "7045"
-| where CommandLine_s has "AnyDesk" or Raw_s has "AnyDesk"
-| project UtcTime_s, Computer, CommandLine_s, Raw_s
+| where EventCode_s == "1"
+| where CommandLine_s has_any ("schtasks", "/create", "New-ScheduledTask", "register-scheduledtask", "install")
+| project UtcTime_s, Computer, User_s, CommandLine_s
 | sort by todatetime(UtcTime_s) asc
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1545" height="625" alt="image" src="https://github.com/user-attachments/assets/cf93e292-a1e9-4b23-814f-46da48470ff6" />
+
+
 
 **Answer:** `AnyDesk`
 
@@ -1265,7 +1272,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="603" height="111" alt="image" src="https://github.com/user-attachments/assets/95c54ca3-eeb7-4240-a618-a6806a614999" />
+
 
 **Answer:** `C:\ProgramData\AnyDesk`
 
@@ -1296,7 +1304,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-<img width="2367" height="725" alt="Screenshot 2026-04-06 224444" src="https://github.com/user-attachments/assets/e4ab98c6-c77d-4c12-98b4-cc55bf9213a9" />
+<img width="1255" height="364" alt="image" src="https://github.com/user-attachments/assets/b1ec2338-2a81-4823-b89b-eedd2813f764" />
+
 
 
 **Answer:** `wevtutil`
