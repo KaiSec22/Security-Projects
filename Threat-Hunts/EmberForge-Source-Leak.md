@@ -179,7 +179,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="3323" height="1099" alt="image" src="https://github.com/user-attachments/assets/96f40523-2928-4c0d-8b71-33655292f595" />
+
 
 **Answer:** `rclone.exe`
 
@@ -207,7 +208,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1611" height="333" alt="image" src="https://github.com/user-attachments/assets/67ecc71e-648e-46e7-a800-38927bd42323" />
+
 
 **Answer:** `66.203.125.15`
 
