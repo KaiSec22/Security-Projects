@@ -146,7 +146,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2048" height="691" alt="image" src="https://github.com/user-attachments/assets/0dd2dcc8-f6ae-4735-8ce6-9ad8fd3f8ca6" />
+
 
 **Answer:** `ntds.dit`
 
