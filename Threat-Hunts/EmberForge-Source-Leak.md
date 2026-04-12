@@ -266,7 +266,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="3323" height="1099" alt="image" src="https://github.com/user-attachments/assets/40efe34a-fe4e-40d5-9f8b-a0466013a437" />
+
 
 **Answer:** `Compress-Archive`
 
@@ -295,7 +296,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2048" height="422" alt="image" src="https://github.com/user-attachments/assets/3349cb39-52d1-460f-a954-a5dbdcef5ec7" />
+
 
 **Answer:** `sync.cloud-endpoint.net`
 
@@ -327,7 +329,9 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2858" height="460" alt="image" src="https://github.com/user-attachments/assets/9a3690e7-abc7-473f-b5e2-4cd011649053" />
+
+
 
 **Answer:** `review.dll`
 
@@ -354,7 +358,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2858" height="460" alt="image" src="https://github.com/user-attachments/assets/20eed94c-1914-4167-a020-686b468a9f0f" />
+
 
 **Answer:** `D:`
 
@@ -381,7 +386,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2858" height="460" alt="image" src="https://github.com/user-attachments/assets/d5de67c0-f7b5-4d55-85b6-151a42b6888c" />
+
 
 **Answer:** `lmartin`
 
@@ -408,7 +414,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="2858" height="460" alt="image" src="https://github.com/user-attachments/assets/ddb4199e-0401-488b-8d3f-603a71153b29" />
+
 
 **Answer:** `explorer.exe > rundll32.exe > review.dll`
 
@@ -436,7 +443,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="3323" height="1099" alt="image" src="https://github.com/user-attachments/assets/3563d106-940b-46c2-b3b3-987cc80e79b4" />
+
 
 **Answer:** `7zG.exe > C:\Users\lmartin.EMBERFORGE\Downloads\EmberForge_Review\`
 
@@ -468,7 +476,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1286" height="298" alt="image" src="https://github.com/user-attachments/assets/16651926-f515-4230-811f-d3f42e42dcfe" />
+
 
 **Answer:** `C:\Users\Public\update.exe`
 
@@ -496,7 +505,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1002" height="337" alt="image" src="https://github.com/user-attachments/assets/2c3169b8-84d4-4fd2-a3d4-9e612018759a" />
+
 
 **Answer:** `cdn.cloud-endpoint.net`
 
@@ -525,7 +535,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="734" height="263" alt="image" src="https://github.com/user-attachments/assets/47cc1e2c-87cb-4e32-9fbb-1b00a98b5b2b" />
+
 
 **Answer:** `104.21.30.237`
 
@@ -552,7 +563,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1529" height="584" alt="image" src="https://github.com/user-attachments/assets/360e630c-0f25-460c-9171-1d2735112a05" />
+
 
 **Answer:** `rundll32.exe > notepad.exe`
 
@@ -582,7 +594,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="760" height="167" alt="image" src="https://github.com/user-attachments/assets/90332f2e-59ca-4a2b-866f-e37e8eebd3f7" />
+
 
 **Answer:** `fodhelper.exe`
 
@@ -610,7 +623,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="827" height="311" alt="image" src="https://github.com/user-attachments/assets/436ef7c2-f11a-4e44-98e8-7cc702099d1f" />
+
 
 **Answer:** `DelegateExecute`
 
@@ -638,7 +652,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1543" height="362" alt="image" src="https://github.com/user-attachments/assets/5ebec1f6-106a-41aa-b4e2-7083c14a2268" />
+
 
 **Answer:** `update.exe > spoolsv.exe (NT AUTHORITY\SYSTEM)`
 
@@ -666,7 +681,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="976" height="373" alt="image" src="https://github.com/user-attachments/assets/2b8e3e1a-f1de-4414-a8d1-6e2ef85d7615" />
+
 
 **Answer:** `update.exe`
 
@@ -693,7 +709,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="569" height="285" alt="image" src="https://github.com/user-attachments/assets/f6cc1959-d8f1-49a3-a99c-5c8a5e0346d7" />
+
 
 **Answer:** `C:\Windows\System32\lsass.dmp`
 
@@ -723,7 +740,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="722" height="202" alt="image" src="https://github.com/user-attachments/assets/438b6dfe-69e8-41a2-b953-08fd38e11524" />
+
 
 **Answer:** `net user /domain`
 
@@ -751,7 +769,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1405" height="310" alt="image" src="https://github.com/user-attachments/assets/70c5b8a0-5d06-4084-a480-dd05a303cb5c" />
+
 
 **Answer:** `net group "Domain Admins" /domain`
 
@@ -779,7 +798,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="782" height="311" alt="image" src="https://github.com/user-attachments/assets/cadf5c8b-5bca-4b11-83af-d0855acc482d" />
+
 
 **Answer:** `nltest /dclist:emberforge.local`
 
@@ -811,7 +831,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="960" height="199" alt="image" src="https://github.com/user-attachments/assets/8155269f-bd46-4e9f-9f0e-a208ad3252b8" />
+
 
 **Answer:** `cmd.exe /c "net share tools=C:\Users\Public /grant:everyone,full"`
 
@@ -839,7 +860,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1227" height="203" alt="image" src="https://github.com/user-attachments/assets/8b59eabb-24f5-4796-b2a6-946551d3b9a5" />
+
 
 **Answer:** `SMB`
 
@@ -867,7 +889,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="798" height="394" alt="image" src="https://github.com/user-attachments/assets/08160bba-ee9b-4b72-803f-8e2b6a4d7af2" />
+
 
 **Answer:** `spoolsv.exe`
 
@@ -895,7 +918,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1071" height="246" alt="image" src="https://github.com/user-attachments/assets/933828b1-103c-46c2-a748-858dbcad4b2e" />
+
 
 **Answer:** `cmd.exe /c copy C:\Users\Public\update.exe \\10.1.57.66\C$\Users\Public\update.exe`
 
@@ -923,7 +947,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="718" height="390" alt="image" src="https://github.com/user-attachments/assets/38cd8d91-e7d5-46b4-bd47-1f44620a5ee4" />
+
 
 **Answer:** `certutil.exe > http://sync.cloud-endpoint.net:8080/update.exe`
 
@@ -951,7 +976,7 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="1541" height="526" alt="image" src="https://github.com/user-attachments/assets/033abdf2-485f-414b-a7e5-8d0f76863492" />
 
 **Answer:** `MzLblBFm`
 
