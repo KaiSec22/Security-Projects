@@ -58,7 +58,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="3323" height="1099" alt="Screenshot 2026-04-06 203255" src="https://github.com/user-attachments/assets/95079c02-7539-458e-a571-15c53fd94ce0" />
+
 
 **Answer:** `C:\GameDev`
 
