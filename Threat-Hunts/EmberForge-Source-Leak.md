@@ -1,6 +1,7 @@
 # Threat-Hunting-Scenario-EmberForge-Source-Leak
 
-![artifact here]
+<img width="1121" height="860" alt="image" src="https://github.com/user-attachments/assets/a689db63-bb18-4ae8-b644-c8ddf063ae3e" />
+
 
 **Participant:** Kai Gallette 
 
