@@ -234,7 +234,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="3323" height="1099" alt="image" src="https://github.com/user-attachments/assets/0a8547cc-7d73-40fc-a503-f9e8308cee7b" />
+
 
 **Answer:** `Summer2024!`
 
