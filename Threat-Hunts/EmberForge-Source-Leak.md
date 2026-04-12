@@ -58,7 +58,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-<img width="3323" height="1099" alt="Screenshot 2026-04-06 203255" src="https://github.com/user-attachments/assets/95079c02-7539-458e-a571-15c53fd94ce0" />
+<img width="3323" height="1099" alt="image" src="https://github.com/user-attachments/assets/97729ab6-cee7-43f9-aa6d-e5b8677577ca" />
+
 
 
 **Answer:** `C:\GameDev`
@@ -87,7 +88,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="3323" height="1099" alt="image" src="https://github.com/user-attachments/assets/ce03ce73-2249-4c40-9bb8-bf372b41cc5b" />
+
 
 **Answer:** `MEGA`
 
@@ -115,7 +117,8 @@ EmberForgeX_CL
 ```
 
 **Artifact:**  
-`[artifact here]`
+<img width="3323" height="1099" alt="image" src="https://github.com/user-attachments/assets/7b21ff98-60ca-437b-bf59-e18fd00afcf4" />
+
 
 **Answer:** `jwilson.vhr@proton.me`
 
