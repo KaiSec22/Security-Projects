@@ -21,9 +21,8 @@
     PowerShell Ver. :
 
 .USAGE
-
-        Example syntax:
-        PS C:\> .\WN11-AC-000010.ps1
+    Example syntax:
+    PS C:\> .\WN11-AC-000010.ps1
 #>
 
 # Configure account lockout threshold to 3 invalid logon attempts
