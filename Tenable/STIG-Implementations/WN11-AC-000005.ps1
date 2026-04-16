@@ -21,8 +21,8 @@
     PowerShell Ver. :
 
 .USAGE
-  Example syntax:
-  PS C:\> .\WN11-AC-000005.ps1
+    Example syntax:
+    PS C:\> .\WN11-AC-000005.ps1
 #>
 
 # Configure account lockout duration to 15 minutes
