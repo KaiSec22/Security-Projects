@@ -21,8 +21,8 @@
     PowerShell Ver. :
 
 .USAGE
-  Example syntax:
-  PS C:\> .\WN11-AU-000560.ps1
+    Example syntax:
+    PS C:\> .\WN11-AU-000560.ps1
 #>
 
 # Enable Success auditing for Other Logon/Logoff Events
