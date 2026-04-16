@@ -21,8 +21,8 @@
     PowerShell Ver. :
 
 .USAGE
-      Example syntax:
-      PS C:\> .\WN11-AU-000050.ps1
+    Example syntax:
+    PS C:\> .\WN11-AU-000050.ps1
 #>
 
 # Enable Success auditing for Process Creation
