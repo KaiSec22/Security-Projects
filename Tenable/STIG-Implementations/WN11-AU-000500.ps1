@@ -22,8 +22,6 @@
 
 .USAGE
 
-> Run the following command
-
     Example syntax:
     PS C:\> .\WN11-AU-000500.ps1 
 #>
