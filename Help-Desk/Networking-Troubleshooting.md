@@ -58,7 +58,8 @@ tracert google.com
 
 These tests confirmed that the workstation initially had working network connectivity, successful DNS name resolution, and a valid route to external internet resources.
 
-![Baseline Connectivity Validation](baseline_connectivity_validation.png)
+<img width="681" height="723" alt="image" src="https://github.com/user-attachments/assets/b3fd5a90-fc45-4e35-bf6b-d4ab7f7d3bc4" />
+
 
 **Findings:**
 
@@ -85,7 +86,8 @@ ipconfig
 
 The results showed a complete loss of connectivity, confirming that the machine no longer had any active network path. After documenting the failure state, I re-enabled the adapter and restored connectivity.
 
-![Network Adapter Disabled](network_adapter_disabled.png)
+<img width="707" height="531" alt="image" src="https://github.com/user-attachments/assets/74fefc72-1b9f-4652-ba8a-5dad71037afd" />
+
 
 **Findings:**
 
@@ -120,8 +122,10 @@ This created the expected split behavior:
 
 This proved that network connectivity was still present, but DNS name resolution was broken. After testing, I restored the correct DNS settings and confirmed that name resolution worked again. :contentReference[oaicite:3]{index=3}
 
-![DNS Failure Configuration](dns_failure_configuration.png)
-![DNS Failure Test Results](dns_failure_test_results.png)
+<img width="394" height="449" alt="image" src="https://github.com/user-attachments/assets/84f106a3-1ed7-4b1f-8758-52d8a586c049" />
+
+<img width="723" height="457" alt="image" src="https://github.com/user-attachments/assets/92eeca98-3ecf-4ab2-90e0-9b8ce18b4dd7" />
+
 
 *Setting DNS to `127.0.0.1` preserved raw connectivity while breaking hostname resolution, accurately simulating a common Help Desk DNS issue.*
 
@@ -154,8 +158,10 @@ tracert google.com
 
 The system failed to reach the internet, and routing failed immediately. This simulated the kind of issue caused by incorrect static addressing, wrong gateway assignments, or users connected to the wrong network segment. After completing the test, I restored automatic IP and DNS configuration and verified that connectivity returned. :contentReference[oaicite:4]{index=4}
 
-![Wrong Gateway Configuration](wrong_gateway_configuration.png)
-![Wrong Gateway Test Results](wrong_gateway_test_results.png)
+<img width="640" height="479" alt="image" src="https://github.com/user-attachments/assets/a84eee13-51e5-4fb6-b5f7-dd8051339f70" />
+
+<img width="720" height="418" alt="image" src="https://github.com/user-attachments/assets/41f33128-5365-457d-ba4d-8e81a8b86d5e" />
+
 
 *Incorrect static addressing and gateway configuration removed the host’s valid path to the internet, demonstrating a routing failure scenario common in real support environments.*
 
@@ -184,7 +190,6 @@ tracert google.com
 
 This final recovery phase confirmed that each issue had been resolved correctly and that the workstation had returned to normal operation.
 
-![Post-Recovery Connectivity Validation](post_recovery_connectivity_validation.png)
 
 **Findings:**
 
