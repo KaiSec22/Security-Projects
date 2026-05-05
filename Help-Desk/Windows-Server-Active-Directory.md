@@ -41,7 +41,8 @@ The first phase of the lab focused on joining the Windows 10 workstation to the 
 
 After rebooting, I confirmed that the workstation appeared in Active Directory under the default **Computers** container, verifying that the domain join process completed successfully.
 
-![Domain Join Confirmation](domain_join_confirmation.png)
+![Domain Join Confirmation]<img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/3a6f5b0d-2252-4c8d-92f5-b038ac5a7016" />
+
 
 **Findings:**
 
@@ -57,7 +58,8 @@ After joining the workstation to the domain, I validated authentication by loggi
 
 This step verified that domain logons were functioning properly and that the workstation was correctly accepting domain credentials.
 
-![Domain User Logon Validation](domain_user_logon_validation.png)
+![Domain User Logon Validation]<img width="1015" height="812" alt="image" src="https://github.com/user-attachments/assets/15f29d16-b678-4122-aeb6-6d539751d2d2" />
+
 
 **Findings:**
 
@@ -141,7 +143,8 @@ To validate the lockout policy, I intentionally entered incorrect passwords mult
 
 This confirmed that the lockout policy was functioning as intended and that the domain controller was enforcing the configured threshold.
 
-![Account Lockout Simulation](lockout_simulation.png)
+![Account Lockout Simulation]<img width="1017" height="816" alt="image" src="https://github.com/user-attachments/assets/9203930d-852f-4485-a912-791d212d8860" />
+
 
 **Findings:**
 
