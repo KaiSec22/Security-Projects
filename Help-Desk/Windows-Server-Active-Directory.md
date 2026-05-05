@@ -41,8 +41,9 @@ The first phase of the lab focused on joining the Windows 10 workstation to the 
 
 After rebooting, I confirmed that the workstation appeared in Active Directory under the default **Computers** container, verifying that the domain join process completed successfully.
 
-![Domain Join Confirmation] <img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/3a6f5b0d-2252-4c8d-92f5-b038ac5a7016" />
+<img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/3a6f5b0d-2252-4c8d-92f5-b038ac5a7016" />
 
+*Domain join confirmation screen*
 
 **Findings:**
 
@@ -58,8 +59,9 @@ After joining the workstation to the domain, I validated authentication by loggi
 
 This step verified that domain logons were functioning properly and that the workstation was correctly accepting domain credentials.
 
-![Domain User Logon Validation]<img width="1015" height="812" alt="image" src="https://github.com/user-attachments/assets/15f29d16-b678-4122-aeb6-6d539751d2d2" />
+<img width="1015" height="812" alt="image" src="https://github.com/user-attachments/assets/15f29d16-b678-4122-aeb6-6d539751d2d2" />
 
+*Command Prompt showing user identity as corp\jdoe*
 
 **Findings:**
 
@@ -85,7 +87,15 @@ I then applied appropriate NTFS and share permissions so that users could only a
 
 This phase demonstrated role-based access control and the practical validation of share permissions from the user side.
 
-![Department Share Access Validation](department_share_access.png)
+<img width="993" height="638" alt="image" src="https://github.com/user-attachments/assets/9e67e273-b7d2-4630-b4fb-7fba448c54f1" />
+<img width="987" height="620" alt="image" src="https://github.com/user-attachments/assets/7ff357de-d93c-4844-9775-b574e41c2917" />
+
+*IT employee successfully accessed `IT_SHARE` after share permissions were configured.*
+
+<img width="1020" height="726" alt="image" src="https://github.com/user-attachments/assets/8d2b1fdb-e1c9-4820-824f-685d1329214a" />
+<img width="1022" height="774" alt="image" src="https://github.com/user-attachments/assets/036d6142-f84a-4184-8ac9-a58d72996ff2" />
+
+*Finance employee successfully accessed `FINANCE_SHARE` but was denied access to `HR_SHARE`, confirming department-based access controls were working as intended.*
 
 **Findings:**
 
@@ -105,7 +115,10 @@ To simulate a basic enterprise security control, I used **Group Policy Managemen
 
 After applying the policy and rebooting **WIN10-A**, the security banner appeared successfully prior to logon.
 
-![Security Login Banner](security_login_banner.png)
+<img width="952" height="627" alt="image" src="https://github.com/user-attachments/assets/4ed50958-51eb-4ae9-a2bb-4ed0151a4404" />
+<img width="1018" height="813" alt="image" src="https://github.com/user-attachments/assets/aa0e7e86-1ff3-46bb-adeb-7fd11eca8092" />
+
+*Security login banner set through GP and displayed before login*
 
 **Findings:**
 
@@ -125,7 +138,10 @@ Next, I created and linked a new Group Policy Object to enforce account lockout 
 
 After forcing Group Policy to update, I confirmed the policy settings using `net accounts`, verifying that the lockout controls were in effect.
 
-![Account Lockout Policy Configuration](account_lockout_policy.png)
+<img width="773" height="554" alt="image" src="https://github.com/user-attachments/assets/83f7ef82-a8d1-40a9-9104-0f98836de3f9" />
+<img width="955" height="511" alt="image" src="https://github.com/user-attachments/assets/d6044d41-7de4-4c64-b0df-112db4562f00" />
+
+*Account Lockout GPO creation and confirmation*
 
 **Findings:**
 
@@ -143,8 +159,9 @@ To validate the lockout policy, I intentionally entered incorrect passwords mult
 
 This confirmed that the lockout policy was functioning as intended and that the domain controller was enforcing the configured threshold.
 
-![Account Lockout Simulation]<img width="1017" height="816" alt="image" src="https://github.com/user-attachments/assets/9203930d-852f-4485-a912-791d212d8860" />
+<img width="1017" height="816" alt="image" src="https://github.com/user-attachments/assets/9203930d-852f-4485-a912-791d212d8860" />
 
+*4 failed password attempts lead to lockout*
 
 **Findings:**
 
@@ -166,7 +183,10 @@ The following event IDs were reviewed:
 
 Finding these events confirmed that the lockout and recovery actions were both visible and traceable through native Windows logging.
 
-![Account Recovery and Event Verification](account_recovery_event_validation.png)
+<img width="406" height="535" alt="image" src="https://github.com/user-attachments/assets/dcb6462c-12db-4098-8392-8fa9f559eecf" />
+<img width="846" height="702" alt="image" src="https://github.com/user-attachments/assets/a1fe89ae-f436-42cd-9bda-fa41cd2851db" />
+
+*Unlocked the employees account and found the password reset in the event viewer to confirm traceability*
 
 **Findings:**
 
