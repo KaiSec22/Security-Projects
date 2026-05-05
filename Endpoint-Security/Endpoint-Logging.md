@@ -40,8 +40,9 @@ The first phase of the lab focused on deploying **Microsoft Sysmon** to improve 
 
 Testing confirmed that Sysmon successfully captured both **process creation events** and **file creation events**, which are valuable for tracing execution flow and identifying suspicious activity on an endpoint.
 
-![Sysmon Process Creation Validation](sysmon_process_creation_validation.png)
-![Sysmon File Creation Validation](sysmon_file_creation_validation.png)
+<img width="2370" height="1292" alt="image" src="https://github.com/user-attachments/assets/16facfe3-32ad-46b7-af02-7cea15019b81" />
+
+<img width="2375" height="1294" alt="image" src="https://github.com/user-attachments/assets/44340c96-63f1-4937-b8ac-a485a26d990f" />
 
 *Sysmon successfully captured both process creation and file creation activity, expanding endpoint visibility beyond default Windows logging.*
 
@@ -60,8 +61,9 @@ The next phase focused on reviewing native Windows logs for meaningful security 
 
 This phase showed that even without additional tooling, Windows Event Logs can provide valuable evidence for authentication issues, persistence activity, and administrative actions.
 
-![Failed Logon Event 4625](failed_logon_event_4625.png)
-![Task Scheduler Action Completed](task_scheduler_action_completed.png)
+<img width="1865" height="1070" alt="image" src="https://github.com/user-attachments/assets/30fddad1-26f7-436f-a947-46890c22e344" />
+
+<img width="1868" height="1072" alt="image" src="https://github.com/user-attachments/assets/1edc149d-a212-4465-a487-2cf3d7053096" />
 
 *Native Windows logging captured both failed authentication activity and scheduled task execution, demonstrating visibility into common administrative and security-relevant events.*
 
@@ -106,8 +108,9 @@ Validation confirmed that enhanced PowerShell telemetry was available through:
 
 These logs captured both script content and execution details, improving visibility into what PowerShell was doing on the host.
 
-![PowerShell Script Block Logging](powershell_script_block_logging_4104.png)
-![PowerShell Module Logging](powershell_module_logging_4103.png)
+<img width="1865" height="1075" alt="image" src="https://github.com/user-attachments/assets/3fee0334-9784-45fe-a7f9-eee40f7593e4" />
+
+<img width="1867" height="1069" alt="image" src="https://github.com/user-attachments/assets/8dc922f3-1c27-4cdd-9caf-930d1afb676b" />
 
 *Enhanced PowerShell logging captured both script block content and pipeline/module-level execution details, improving visibility into command and script activity on the endpoint.*
 
