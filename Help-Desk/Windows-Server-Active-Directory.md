@@ -41,7 +41,7 @@ The first phase of the lab focused on joining the Windows 10 workstation to the 
 
 After rebooting, I confirmed that the workstation appeared in Active Directory under the default **Computers** container, verifying that the domain join process completed successfully.
 
-![Domain Join Confirmation]<img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/3a6f5b0d-2252-4c8d-92f5-b038ac5a7016" />
+![Domain Join Confirmation] <img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/3a6f5b0d-2252-4c8d-92f5-b038ac5a7016" />
 
 
 **Findings:**
