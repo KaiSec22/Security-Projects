@@ -48,11 +48,11 @@ The detection intentionally avoided relying only on broad indicators such as nor
 
 Initial discovery showed that PowerShell activity was present in Microsoft Defender for Endpoint telemetry through the `DeviceProcessEvents` table. A focused query was then used to identify PowerShell executions containing higher-risk command-line indicators.
 
-![Suspicious PowerShell Query Results](visuals/01_suspicious_powershell_query_results.png)
+<img width="2780" height="1517" alt="01" src="https://github.com/user-attachments/assets/5d650a31-8875-4ffa-a2f7-d85182738c1c" />
 
 The detection was then tuned to focus on stronger suspicious indicators such as encoded command usage, execution policy bypass, web-based retrieval, base64-related behavior, and hidden window execution.
 
-![Tuned PowerShell Detection Query](visuals/02_tuned_powershell_detection_query.png)
+<img width="2777" height="1522" alt="02" src="https://github.com/user-attachments/assets/ed201e6a-1de9-422f-b5a3-431ee1f442da" />
 
 The final analytics rule used the following KQL logic:
 
@@ -79,11 +79,11 @@ Entity mapping was configured to enrich the incident:
 - **Host entity:** `DeviceName`
 - **Account entity:** `InitiatingProcessAccountName`
 
-![Analytics Rule Configuration](visuals/03_analytics_rule_configuration.png)
+<img width="3492" height="1904" alt="03" src="https://github.com/user-attachments/assets/056a69d4-e3b6-4de0-888a-88b441ee18e5" />
 
 The completed custom analytics rule appeared under active Sentinel analytics rules as an enabled scheduled rule.
 
-![Analytics Rule Created](visuals/04_analytics_rule_created.png)
+<img width="2624" height="451" alt="04" src="https://github.com/user-attachments/assets/a9b7c406-4f84-4c4b-9af8-46f9121021e5" />
 
 **Findings:**
 
@@ -98,7 +98,7 @@ The completed custom analytics rule appeared under active Sentinel analytics rul
 
 After the scheduled analytics rule executed, Microsoft Sentinel generated an incident titled **Suspicious PowerShell Activity Detected KWB**.
 
-![Incident Created and Overview](visuals/05_incident_created_and_overview.png)
+<img width="2943" height="1865" alt="05" src="https://github.com/user-attachments/assets/18af7c38-ffdc-4842-92e6-8aa375a94e88" />
 
 The incident showed a high severity rating, associated alerts, thousands of related events, and over one hundred mapped entities. This confirmed that the full detection pipeline was working:
 
@@ -117,11 +117,11 @@ The incident showed a high severity rating, associated alerts, thousands of rela
 
 The incident was assigned to the analyst and moved to **Active** for investigation. The full incident details page showed the incident timeline, related entities, evidence count, associated alerts, tactics and techniques, similar incidents, and top insights.
 
-![Incident Full Details Overview](visuals/06_incident_full_details_overview.png)
+<img width="3824" height="1915" alt="06" src="https://github.com/user-attachments/assets/faafc19c-26a5-456c-9a08-4068815d1d43" />
 
 The Sentinel investigation graph showed the incident connected to multiple host and account entities.
 
-![Investigation Graph](visuals/07_investigation_graph.png)
+<img width="3822" height="1919" alt="07" src="https://github.com/user-attachments/assets/39b22be9-caf9-4bf9-8d6c-3916ea7fb30d" />
 
 This confirmed that the analytics rule entity mapping successfully enriched the incident. Instead of only reviewing raw query results, the incident could be investigated through a relationship-based view showing how the alert connected to hosts and accounts across the environment.
 
@@ -155,7 +155,7 @@ A follow-up validation query was run across the same 7-day lookback window used 
         by DeviceName, InitiatingProcessAccountName, InitiatingProcessFileName
     | order by EventCount desc
 
-![PowerShell Activity Summary](visuals/08_powershell_activity_summary.png)
+<img width="2011" height="1584" alt="08" src="https://github.com/user-attachments/assets/a1f001a6-ac76-424f-9e1c-d7d7932171bc" />
 
 The results showed that suspicious PowerShell indicators appeared across multiple systems and account contexts. The highest-volume activity was associated with system-level execution through `cmd.exe`, and additional results involved `gc_worker.exe`, which appeared consistent with Azure guest configuration or management activity.
 
@@ -177,7 +177,7 @@ A representative evidence query was then reviewed to inspect raw PowerShell even
     | project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine, ReportId
     | order by Timestamp desc
 
-![Representative PowerShell Evidence](visuals/09_representative_powershell_evidence.png)
+<img width="3250" height="1590" alt="09" src="https://github.com/user-attachments/assets/8db19569-3855-4733-bcae-ec91b4826f15" />
 
 The representative evidence showed suspicious PowerShell command-line patterns such as encoded command usage, execution policy bypass, and PowerShell launched through command shell or guest configuration-related processes.
 
@@ -218,7 +218,7 @@ Because the incident generated a large amount of evidence, a tuning summary quer
         by ReviewCategory, DeviceName, InitiatingProcessAccountName, InitiatingProcessFileName
     | order by EventCount desc
 
-![Detection Tuning Summary](visuals/10_detection_tuning_summary.png)
+<img width="2312" height="1597" alt="10" src="https://github.com/user-attachments/assets/0b32378c-c7fd-4169-80e8-e102d60c3eef" />
 
 The tuning summary showed that many high-volume results were associated with system or lab automation context, Azure guest configuration activity, and likely scanner or service-account activity. A smaller subset remained categorized as **Requires analyst review**, which showed that the tuning logic reduced noise without fully suppressing visibility into unexplained activity.
 
@@ -238,7 +238,7 @@ After investigation, the incident was closed as:
 
 **Benign Positive — Suspicious but expected**
 
-![Incident Closure](visuals/11_incident_closure.png)
+<img width="679" height="1590" alt="11" src="https://github.com/user-attachments/assets/498ebeaa-2717-4a42-8b54-af8450717ec7" />
 
 The closure notes documented that the analytics rule successfully detected suspicious PowerShell command-line indicators, including encoded command usage, execution policy bypass, and web-based retrieval patterns. Follow-up investigation showed that many high-volume results were associated with system-level execution, Azure guest configuration activity, scanner/service-account activity, or lab automation context.
 
