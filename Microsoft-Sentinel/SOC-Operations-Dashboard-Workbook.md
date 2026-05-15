@@ -82,6 +82,7 @@ SecurityIncident
 | where TimeGenerated > ago(24h)
 | summarize IncidentCount = count() by Severity
 | order by IncidentCount desc
+```
 
 The following KQL was used to summarize incidents by status:
 
