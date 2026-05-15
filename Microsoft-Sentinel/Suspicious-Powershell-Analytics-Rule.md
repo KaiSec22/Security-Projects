@@ -56,21 +56,23 @@ The detection was then tuned to focus on stronger suspicious indicators such as 
 
 The final analytics rule used the following KQL logic:
 
-    DeviceProcessEvents
-    | where Timestamp > ago(7d)
-    | where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
-    | where ProcessCommandLine has_any (
-        "-EncodedCommand",
-        "-enc",
-        "DownloadString",
-        "Invoke-WebRequest",
-        "iwr",
-        "FromBase64String",
-        "WindowStyle Hidden",
-        "ExecutionPolicy Bypass"
-    )
-    | project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine, ReportId
-    | order by Timestamp desc
+```kusto
+DeviceProcessEvents
+| where Timestamp > ago(7d)
+| where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
+| where ProcessCommandLine has_any (
+    "-EncodedCommand",
+    "-enc",
+    "DownloadString",
+    "Invoke-WebRequest",
+    "iwr",
+    "FromBase64String",
+    "WindowStyle Hidden",
+    "ExecutionPolicy Bypass"
+)
+| project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine, ReportId
+| order by Timestamp desc
+```
 
 A Microsoft Sentinel scheduled analytics rule was created using this query. The rule was configured to review the previous 7 days of data, generate an alert when the query returned results, and automatically create an incident for triage.
 
@@ -138,22 +140,24 @@ This confirmed that the analytics rule entity mapping successfully enriched the 
 
 A follow-up validation query was run across the same 7-day lookback window used by the analytics rule. This helped summarize which hosts, accounts, and initiating processes contributed most heavily to the incident.
 
-    DeviceProcessEvents
-    | where Timestamp > ago(7d)
-    | where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
-    | where ProcessCommandLine has_any (
-        "-EncodedCommand",
-        "-enc",
-        "DownloadString",
-        "Invoke-WebRequest",
-        "iwr",
-        "FromBase64String",
-        "WindowStyle Hidden",
-        "ExecutionPolicy Bypass"
-    )
-    | summarize EventCount=count(), FirstSeen=min(Timestamp), LastSeen=max(Timestamp) 
-        by DeviceName, InitiatingProcessAccountName, InitiatingProcessFileName
-    | order by EventCount desc
+```kusto
+DeviceProcessEvents
+| where Timestamp > ago(7d)
+| where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
+| where ProcessCommandLine has_any (
+    "-EncodedCommand",
+    "-enc",
+    "DownloadString",
+    "Invoke-WebRequest",
+    "iwr",
+    "FromBase64String",
+    "WindowStyle Hidden",
+    "ExecutionPolicy Bypass"
+)
+| summarize EventCount=count(), FirstSeen=min(Timestamp), LastSeen=max(Timestamp) 
+   by DeviceName, InitiatingProcessAccountName, InitiatingProcessFileName
+| order by EventCount desc
+```
 
 <img width="2011" height="1584" alt="08" src="https://github.com/user-attachments/assets/a1f001a6-ac76-424f-9e1c-d7d7932171bc" />
 
@@ -161,21 +165,23 @@ The results showed that suspicious PowerShell indicators appeared across multipl
 
 A representative evidence query was then reviewed to inspect raw PowerShell events across the environment.
 
-    DeviceProcessEvents
-    | where Timestamp > ago(7d)
-    | where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
-    | where ProcessCommandLine has_any (
-        "-EncodedCommand",
-        "-enc",
-        "DownloadString",
-        "Invoke-WebRequest",
-        "iwr",
-        "FromBase64String",
-        "WindowStyle Hidden",
-        "ExecutionPolicy Bypass"
-    )
-    | project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine, ReportId
-    | order by Timestamp desc
+```kusto
+DeviceProcessEvents
+| where Timestamp > ago(7d)
+| where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
+| where ProcessCommandLine has_any (
+    "-EncodedCommand",
+    "-enc",
+    "DownloadString",
+    "Invoke-WebRequest",
+    "iwr",
+    "FromBase64String",
+    "WindowStyle Hidden",
+    "ExecutionPolicy Bypass"
+)
+| project Timestamp, DeviceName, InitiatingProcessAccountName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine, ReportId
+| order by Timestamp desc
+```
 
 <img width="3250" height="1590" alt="09" src="https://github.com/user-attachments/assets/8db19569-3855-4733-bcae-ec91b4826f15" />
 
@@ -195,28 +201,30 @@ The representative evidence showed suspicious PowerShell command-line patterns s
 
 Because the incident generated a large amount of evidence, a tuning summary query was created to classify results into review categories. The purpose was to separate likely expected operational activity from events that still required analyst review.
 
-    DeviceProcessEvents
-    | where Timestamp > ago(7d)
-    | where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
-    | where ProcessCommandLine has_any (
-        "-EncodedCommand",
-        "-enc",
-        "DownloadString",
-        "Invoke-WebRequest",
-        "iwr",
-        "FromBase64String",
-        "WindowStyle Hidden",
-        "ExecutionPolicy Bypass"
-    )
-    | extend ReviewCategory = case(
-        InitiatingProcessAccountName has "nessus" or InitiatingProcessCommandLine has "nessus" or ProcessCommandLine has "nessus", "Likely scanner/service-account activity",
-        InitiatingProcessFileName in~ ("gc_worker.exe", "gc_service.exe") or ProcessCommandLine has "GuestConfiguration", "Likely Azure guest configuration activity",
-        InitiatingProcessAccountName == "system" and InitiatingProcessFileName == "cmd.exe", "System or lab automation context",
-        "Requires analyst review"
-    )
-    | summarize EventCount=count(), FirstSeen=min(Timestamp), LastSeen=max(Timestamp)
-        by ReviewCategory, DeviceName, InitiatingProcessAccountName, InitiatingProcessFileName
-    | order by EventCount desc
+```kusto
+DeviceProcessEvents
+| where Timestamp > ago(7d)
+| where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
+| where ProcessCommandLine has_any (
+    "-EncodedCommand",
+    "-enc",
+    "DownloadString",
+    "Invoke-WebRequest",
+    "iwr",
+    "FromBase64String",
+    "WindowStyle Hidden",
+    "ExecutionPolicy Bypass"
+)
+| extend ReviewCategory = case(
+    InitiatingProcessAccountName has "nessus" or InitiatingProcessCommandLine has "nessus" or ProcessCommandLine has "nessus", "Likely scanner/service-account activity",
+    InitiatingProcessFileName in~ ("gc_worker.exe", "gc_service.exe") or ProcessCommandLine has "GuestConfiguration", "Likely Azure guest configuration activity",
+    InitiatingProcessAccountName == "system" and InitiatingProcessFileName == "cmd.exe", "System or lab automation context",
+    "Requires analyst review"
+)
+| summarize EventCount=count(), FirstSeen=min(Timestamp), LastSeen=max(Timestamp)
+    by ReviewCategory, DeviceName, InitiatingProcessAccountName, InitiatingProcessFileName
+| order by EventCount desc
+```
 
 <img width="2312" height="1597" alt="10" src="https://github.com/user-attachments/assets/0b32378c-c7fd-4169-80e8-e102d60c3eef" />
 
