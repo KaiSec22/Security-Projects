@@ -62,7 +62,7 @@ Two panels were placed side by side:
 - **Sentinel Incidents by Severity**
 - **Sentinel Incidents by Status**
 
-![SOC Incident Overview](visuals/01_soc_incident_overview.png)
+<img width="1409" height="478" alt="Screenshot 2026-05-14 171911" src="https://github.com/user-attachments/assets/e3b938da-4875-4fea-acbc-90c02e1ad302" />
 
 The severity panel showed how current incidents were distributed across High, Medium, Low, and Informational severity levels.
 
@@ -102,7 +102,7 @@ The recent incident grid displayed the newest Sentinel incidents from the last 2
 
 The workload grid summarized current incident volume by both severity and status, helping identify which types of incidents required the most immediate attention.
 
-![Analyst Triage Queue](visuals/02_analyst_triage_queue.png)
+<img width="1709" height="554" alt="Screenshot 2026-05-14 171928" src="https://github.com/user-attachments/assets/d3c95cd2-eb63-4445-b8ca-0a37bfb94ac5" />
 
 **Findings:**
 
@@ -152,7 +152,7 @@ This section included:
 - **Sentinel Incidents Over Time**
 - **Suspicious PowerShell Activity Over Time**
 
-![Detection Trends and Monitoring](visuals/03_detection_trends_and_monitoring.png)
+<img width="1893" height="792" alt="Screenshot 2026-05-14 172002" src="https://github.com/user-attachments/assets/77527ad4-bb12-4926-8f21-943f2407ac13" />
 
 The top incident titles panel showed which detection names or incident titles generated the most volume in the last 24 hours. This helped identify which detections were contributing most heavily to SOC workload.
 
@@ -169,36 +169,41 @@ The suspicious PowerShell activity panel provided focused visibility into PowerS
 
 The following KQL was used to identify top Sentinel incident titles:
 
-    SecurityIncident
-    | where TimeGenerated > ago(24h)
-    | summarize IncidentCount = count() by Title
-    | top 10 by IncidentCount desc
+```kusto
+SecurityIncident
+| where TimeGenerated > ago(24h)
+| summarize IncidentCount = count() by Title
+| top 10 by IncidentCount desc
+```
 
 The following KQL was used to chart incidents over time:
 
-    SecurityIncident
-    | where TimeGenerated > ago(24h)
-    | summarize IncidentCount = count() by bin(TimeGenerated, 1h)
-    | order by TimeGenerated asc
+```kusto
+SecurityIncident
+| where TimeGenerated > ago(24h)
+| summarize IncidentCount = count() by bin(TimeGenerated, 1h)
+| order by TimeGenerated asc
+```
 
 The following KQL was used to chart suspicious PowerShell activity over time:
 
-    DeviceProcessEvents
-    | where Timestamp > ago(24h)
-    | where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
-    | where ProcessCommandLine has_any (
-        "-EncodedCommand",
-        "-enc",
-        "DownloadString",
-        "Invoke-WebRequest",
-        "iwr",
-        "FromBase64String",
-        "WindowStyle Hidden",
-        "ExecutionPolicy Bypass"
-    )
-    | summarize EventCount=count() by bin(Timestamp, 1h)
-    | order by Timestamp asc
-
+```kusto
+DeviceProcessEvents
+| where Timestamp > ago(24h)
+| where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
+| where ProcessCommandLine has_any (
+    "-EncodedCommand",
+    "-enc",
+    "DownloadString",
+    "Invoke-WebRequest",
+    "iwr",
+    "FromBase64String",
+    "WindowStyle Hidden",
+    "ExecutionPolicy Bypass"
+)
+| summarize EventCount=count() by bin(Timestamp, 1h)
+| order by Timestamp asc
+```
 ---
 
 ### Dashboard Design Decisions
