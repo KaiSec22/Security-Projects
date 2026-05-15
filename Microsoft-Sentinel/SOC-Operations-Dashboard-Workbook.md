@@ -86,11 +86,12 @@ SecurityIncident
 
 The following KQL was used to summarize incidents by status:
 
-    SecurityIncident
-    | where TimeGenerated > ago(24h)
-    | summarize IncidentCount = count() by Status
-    | order by IncidentCount desc
-
+```kusto
+SecurityIncident
+| where TimeGenerated > ago(24h)
+| summarize IncidentCount = count() by Status
+| order by IncidentCount desc
+```
 ---
 
 ### Analyst Triage Queue
