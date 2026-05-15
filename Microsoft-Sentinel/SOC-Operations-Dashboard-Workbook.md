@@ -77,10 +77,11 @@ The status panel showed how many incidents were New, Active, or Closed during th
 
 The following KQL was used to summarize incidents by severity:
 
-    SecurityIncident
-    | where TimeGenerated > ago(24h)
-    | summarize IncidentCount = count() by Severity
-    | order by IncidentCount desc
+```kusto
+SecurityIncident
+| where TimeGenerated > ago(24h)
+| summarize IncidentCount = count() by Severity
+| order by IncidentCount desc
 
 The following KQL was used to summarize incidents by status:
 
