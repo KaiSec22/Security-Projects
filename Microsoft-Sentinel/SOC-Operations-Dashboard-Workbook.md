@@ -114,20 +114,22 @@ The workload grid summarized current incident volume by both severity and status
 The following KQL was used to populate the recent incident queue:
 
 ```kusto
-    SecurityIncident
-    | where TimeGenerated > ago(24h)
-    | extend OwnerName = iff(isempty(tostring(Owner.assignedTo)), "Unassigned", tostring(Owner.assignedTo))
-    | project TimeGenerated, Title, Severity, Status, OwnerName, IncidentNumber
-    | order by TimeGenerated desc
-    | take 10
+SecurityIncident
+| where TimeGenerated > ago(24h)
+| extend OwnerName = iff(isempty(tostring(Owner.assignedTo)), "Unassigned", tostring(Owner.assignedTo))
+| project TimeGenerated, Title, Severity, Status, OwnerName, IncidentNumber
+| order by TimeGenerated desc
+| take 10
 ```
 
 The following KQL was used to summarize workload by severity and status:
 
-    SecurityIncident
-    | where TimeGenerated > ago(24h)
-    | summarize IncidentCount = count() by Severity, Status
-    | order by IncidentCount desc
+```kusto
+SecurityIncident
+| where TimeGenerated > ago(24h)
+| summarize IncidentCount = count() by Severity, Status
+| order by IncidentCount desc
+```
 
 **Triage Value:**
 
